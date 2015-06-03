@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angularjs": "0.0.1"
+  },
+  "devDependencies": {
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-typescript": "^2.7.6",
+    "typescript": "^1.5.0-beta"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobslaede/flaming-avenger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobslaede/flaming-avenger/issues"
+  },
+  "homepage": "https://github.com/bobslaede/flaming-avenger"
+}
