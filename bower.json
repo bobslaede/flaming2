@@ -1,0 +1,16 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bobslaede/flaming-avenger",
+  "authors": [
+    "Jeppe Dyrby <jeppe.dyrby@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
