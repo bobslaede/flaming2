@@ -29,3 +29,5 @@ node_modules
 .c9
 
 dist
+
+src/bower_components
