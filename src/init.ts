@@ -2,8 +2,7 @@
 
 import * as angular from 'angular'
 
-import {app} from './app/app.ts'
+import {app} from 'app/app'
 
 angular.bootstrap(document.documentElement, [app.name])
 
-console.log(app, angular);
