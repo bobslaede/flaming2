@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "angular": "^1.4.0"
+    "angular": "^1.4.0",
+    "angular2": "^2.0.0-alpha.26",
+    "reflect-metadata": "^0.1.0"
   },
   "devDependencies": {
     "browserify": "^10.2.3",
