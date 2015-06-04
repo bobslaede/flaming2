@@ -16,7 +16,8 @@
 </head>
 <body>
 
-<paper-button raised>Hello, world!</paper-button>
+
+<my-app></my-app>
 
 
 <!-- build:js init.js -->
@@ -37,12 +38,11 @@
         transpiler: 'typescript',
         paths: {
             'app/*': 'app/*.ts',
-            'angular/*': '../node_modules/angular/*.js',
+            'angular': '../node_modules/angular/angular.js',
         },
         meta: {
-            'angular/angular': {
-                format: 'global',
-                exports: 'window.foo'
+            'angular': {
+                format: 'global'
             }
         }
     })
