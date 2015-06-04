@@ -23,15 +23,32 @@ var getAllPolymerElements = function () {
             var configFile = path.join(__dirname, bowerDir, deps[i], 'bower.json');
             var moduleSettings = require(configFile);
 
-            if (moduleSettings.main && moduleSettings.main.substr(-4) == 'html') {
-                var p = relPath + '/' + deps[i] + '/' + moduleSettings.main;
-                var importStatement = tmpl.replace('__path__', p);
-                imports.push(importStatement);
+
+            var mains = moduleSettings.main && [].concat(moduleSettings.main);
+
+            console.log(moduleSettings.main);
+
+            if (moduleSettings.main && mains.length > 0) {
+                mains.forEach(function (f) {
+                    if (f.substr(-4) == 'html') {
+                        var p = relPath + '/' + deps[i] + '/' + f;
+                        var importStatement = tmpl.replace('__path__', p);
+                        imports.push(importStatement);
+                    }
+                })
+            } else { // useless when the bower.json doesnt include the main file
+                var p1 = relPath + '/' + deps[i] + '/' + deps[i] + '.html';
+                var p2 = bowerDir + '/' + deps[i] + '/' + deps[i] + '.html';
+                if (fs.existsSync(path.join(__dirname, p2))) {
+                    var importStatement = tmpl.replace('__path__', p1);
+                    imports.push(importStatement);
+                }
             }
 
         } catch (e) {}
     }
 
+    console.log(imports);
     return imports;
 };
 
