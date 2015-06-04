@@ -3,7 +3,6 @@
 <head>
     <!-- build:js components.js -->
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <script src="bower_components/traceur-runtime/traceur-runtime.min.js"></script>
     <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <!-- build:css styles/main.css -->
@@ -20,14 +19,11 @@
 <my-app></my-app>
 
 
-<!-- build:js init.js -->
+<!-- build:remove -->
 <script src="bower_components/es6-module-loader/dist/es6-module-loader.src.js"></script>
 <script src="bower_components/systemjs/dist/system.src.js"></script>
 <script src="lib/typescript.js"></script>
 <script>
-    window.foo = {
-        bar:'baz'
-    }
     System.config({
         typescriptOptions: {
             noImplicitAny: true,
@@ -45,10 +41,13 @@
                 format: 'global'
             }
         }
-    })
+    });
     System.import('init.ts')
             .catch(console.error.bind(console));
 </script>
+<!-- endbuild -->
+
+<!-- build:init -->
 <!-- endbuild -->
 </body>
 </html>

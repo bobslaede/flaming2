@@ -1,5 +1,5 @@
 
-import angular from 'angular';
+import angular from 'angular'
 
 var app = angular.module('app', [])
     .directive('myApp', function () {
