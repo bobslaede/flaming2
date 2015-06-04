@@ -11,7 +11,7 @@ gulp.task('build:html', function() {
     
     return gulp.src('src/index.html')
         .pipe(assets)
-      //  .pipe(gulpif('*.js', uglify()))
+        .pipe(gulpif('*.js', uglify()))
         .pipe(assets.restore())
         .pipe(useref())
         .pipe(gulp.dest('dist'))
