@@ -12,6 +12,8 @@ var tsify = require('tsify');
 var debowerify = require('debowerify');
 var bowerResolve = require('bower-resolve');
 
+var browserifyShim = require('browserify-shim');
+
 
 gulp.task('build:html', function() {
     
@@ -34,7 +36,11 @@ gulp.task('build:html', function() {
 
 gulp.task('build:elements', function () {
     return gulp.src('src/elements/elements.html')
-        .pipe(vulcanize())
+        .pipe(vulcanize({
+            inlineScripts: true,
+            inlineCss: true,
+            stripComments: true
+        }))
         .pipe(gulp.dest('dist/elements'))
 });
 
@@ -52,8 +58,8 @@ gulp.task('build:js', function () {
     });
 
     return b
-        .plugin('tsify', { module: 'commonjs'})
         .add('src/init.ts')
+        .plugin('tsify')
         .bundle()
         .pipe(source('init.js'))
         .pipe(buffer())

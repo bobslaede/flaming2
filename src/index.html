@@ -34,11 +34,12 @@
         transpiler: 'typescript',
         paths: {
             'app/*': 'app/*.ts',
-            'angular': '../node_modules/angular/angular.js',
+            'angular': '../node_modules/angular/angular.js'
         },
         meta: {
             'angular': {
-                format: 'global'
+                format: 'global',
+                exports: 'angular'
             }
         }
     });

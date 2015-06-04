@@ -1,7 +1,8 @@
+/// <reference path="../../typings/tsd.d.ts" />
 
-import angular from 'angular'
+import * as angular from 'angular'
 
-var app = angular.module('app', [])
+var foo = angular.module('app', [])
     .directive('myApp', function () {
         return {
             restrict: 'E',
@@ -12,4 +13,4 @@ var app = angular.module('app', [])
         }
     })
 
-export var app = app;
+export var app = foo;
