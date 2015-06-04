@@ -16,13 +16,13 @@ gulp.task('build:html', function() {
         .pipe(useref())
         .pipe(gulp.dest('dist'))
 
-})
+});
 
 gulp.task('build:elements', function () {
     return gulp.src('src/elements/elements.html')
         .pipe(vulcanize())
         .pipe(gulp.dest('dist/elements'))
-})
+});
 
 gulp.task('build:css', function () {
 
@@ -30,4 +30,4 @@ gulp.task('build:css', function () {
         .pipe(less())
         .pipe(gulp.dest('dist'))
 
-})
+});

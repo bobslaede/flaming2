@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "angular": "^1.4.0",
     "angularjs": "0.0.1"
   },
   "devDependencies": {

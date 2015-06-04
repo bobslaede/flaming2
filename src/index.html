@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- build:js components.js -->
-        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-        <!-- endbuild -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
-        <!-- build:css styles/main.css -->
-        <link rel="stylesheet/less" href="styles/main.less">
-        <!-- endbuild -->
-        <link rel="import" href="elements/elements.html">
-        <!-- build:remove -->
-        <script src="bower_components/less/dist/less.js"></script>
-        <!-- endbuild -->
-    </head>
-    <body>
-        
-        <paper-button raised>Hello, world!</paper-button>
-        
-    </body>
+<head>
+    <!-- build:js components.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script src="bower_components/traceur-runtime/traceur-runtime.min.js"></script>
+    <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet/less" href="styles/main.less">
+    <!-- endbuild -->
+    <link rel="import" href="elements/elements.html">
+    <!-- build:remove -->
+    <script src="bower_components/less/dist/less.js"></script>
+    <!-- endbuild -->
+</head>
+<body>
+
+<paper-button raised>Hello, world!</paper-button>
+
+
+<!-- build:js init.js -->
+<script src="bower_components/es6-module-loader/dist/es6-module-loader.src.js"></script>
+<script src="bower_components/systemjs/dist/system.src.js"></script>
+<script src="lib/typescript.js"></script>
+<script>
+    window.foo = {
+        bar:'baz'
+    }
+    System.config({
+        typescriptOptions: {
+            noImplicitAny: true,
+            removeComments: true,
+            declaration: false,
+            emitDecoratorMetadata: true
+        },
+        transpiler: 'typescript',
+        paths: {
+            'app/*': 'app/*.ts',
+            'angular/*': '../node_modules/angular/*.js',
+        },
+        meta: {
+            'angular/angular': {
+                format: 'global',
+                exports: 'window.foo'
+            }
+        }
+    })
+    System.import('init.ts')
+            .catch(console.error.bind(console));
+</script>
+<!-- endbuild -->
+</body>
 </html>
