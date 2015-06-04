@@ -16,10 +16,7 @@ run `src/index.html` in a browser
 ## build and run
 
 ```bash
-$ gulp build:html
-$ gulp build:elements
-$ gulp build:css
-$ gulp build:js
+$ gulp build
 ```
 
 run `dist/index.html` in a browser
