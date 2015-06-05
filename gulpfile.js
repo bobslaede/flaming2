@@ -12,6 +12,12 @@ var tsify = require('tsify');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
 
+var polymer = require('./lib/bower-polymer');
+
+gulp.task('polymer', function (done) {
+    polymer(done);
+});
+
 gulp.task('build:clean', function () {
     return gulp.src('dist')
         .pipe(clean());
@@ -36,7 +42,7 @@ gulp.task('build:html', function() {
 
 });
 
-gulp.task('build:elements', function () {
+gulp.task('build:elements', ['polymer'], function () {
     return gulp.src('src/elements/elements.html')
         .pipe(vulcanize({
             inlineScripts: true,
