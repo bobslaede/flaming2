@@ -6,7 +6,7 @@
 $ npm install -g gulp bower
 $ npm install -d
 $ bower install
-$ node --harmony ./bower-polymer.js
+$ gulp polymer
 ```
 
 ## run dev
