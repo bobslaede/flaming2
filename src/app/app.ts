@@ -1,48 +1,60 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-import * as angular from 'angular'
+import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
 
-var foo = angular.module('app', [])
-    .directive('myApp', function () {
-        return {
-            restrict: 'E',
-            scope: true,
-            template: `
-                <paper-drawer-panel>
-                  <paper-header-panel drawer>
-                    <paper-toolbar>
-                      <div>Application</div>
-                    </paper-toolbar>
-                    <div>
-                        <paper-menu ng-attr-selected="{{app.selected}}">
-                            <paper-item>
-                                <span ng-repeat="item in app.menuItems">{{item}}</span>
-                            </paper-item>
-                        </paper-menu>
+@Component({
+    selector: 'my-app'
+})
+@View({
+    directives: [NgFor],
+    template: `
+        <paper-drawer-panel>
+          <paper-header-panel drawer>
+            <paper-toolbar>
+              <div>Application</div>
+            </paper-toolbar>
+            <div>
+                <paper-menu multi>
+                    <paper-item tabindex="0">
+                        <paper-item-body two-line>
+                            this works
+                        </paper-item-body>
+                        <paper-checkbox></paper-checkbox>
+                    </paper-item>
+                    <template [ng-for] #item [ng-for-of]="items" #i="index">
+                        <paper-item tabindex="0" selected>
+                            <paper-item-body two-line>
+                                doesnt work {{item}}
+                            </paper-item-body>
+      <paper-checkbox></paper-checkbox>
+                        </paper-item>
+                    </template>
+                </paper-menu>
+            </div>
+          </paper-header-panel>
+          <paper-header-panel main>
+            <paper-toolbar>
+              <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+              <div>Title</div>
+            </paper-toolbar>
+            <div> Main content...
+
+                <p>
+                    <div class="icons">
+                        eject
                     </div>
-                  </paper-header-panel>
-                  <paper-header-panel main>
-                    <paper-toolbar>
-                      <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-                      <div>Title</div>
-                    </paper-toolbar>
-                    <div> Main content...
+                </p>
+            </div>
+          </paper-header-panel>
+        </paper-drawer-panel>
+    `
+})
+export class MyApp {
 
-                        <p>
-                            <div class="icons">
-                                eject
-                            </div>
-                        </p>
-                    </div>
-                  </paper-header-panel>
-                </paper-drawer-panel>
-            `,
-            controllerAs: 'app',
-            controller: function () {
-                this.menuItems = ['foo','bar','baz'];
-                this.selected = 1;
-            }
-        }
-    })
+    items:[string]
 
-export var app = foo;
+    constructor() {
+        this.items = ['foo', 'bar', 'baz']
+    }
+
+}
