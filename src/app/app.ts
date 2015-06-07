@@ -15,16 +15,16 @@ import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
             </paper-toolbar>
             <div>
                 <paper-menu multi>
-                    <paper-item tabindex="0">
+                    <paper-item tabindex="0"  data-index="0">
                         <paper-item-body two-line>
                             this works
                         </paper-item-body>
                         <paper-checkbox></paper-checkbox>
                     </paper-item>
                     <template [ng-for] #item [ng-for-of]="items" #i="index">
-                        <paper-item tabindex="0" selected>
+                        <paper-item tabindex="0" selected data-index="1">
                             <paper-item-body two-line>
-                                doesnt work {{item}}
+                                doesnt work {{item}} {{i}}
                             </paper-item-body>
       <paper-checkbox></paper-checkbox>
                         </paper-item>
@@ -54,7 +54,7 @@ export class MyApp {
     items:[string]
 
     constructor() {
-        this.items = ['foo', 'bar', 'baz']
+        this.items = ['foo']
     }
 
 }
