@@ -2,6 +2,10 @@
 
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
 
+interface IItem {
+    name: string
+}
+
 @Component({
     selector: 'my-app'
 })
@@ -10,27 +14,18 @@ import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
     template: `
         <paper-drawer-panel>
           <paper-header-panel drawer>
-            <paper-toolbar>
+            <paper-toolbar (click)="stuff2($event)">
               <div>Application</div>
             </paper-toolbar>
-            <div>
-                <paper-menu multi>
-                    <paper-item tabindex="0"  data-index="0">
-                        <paper-item-body two-line>
-                            this works
-                        </paper-item-body>
-                        <paper-checkbox></paper-checkbox>
-                    </paper-item>
+                <paper-menu>
                     <template [ng-for] #item [ng-for-of]="items" #i="index">
-                        <paper-item tabindex="0" selected data-index="1">
+                        <paper-item tabindex="0" (click)="stuff($event, item)">
                             <paper-item-body two-line>
-                                doesnt work {{item}} {{i}}
+                                {{item.name}}
                             </paper-item-body>
-      <paper-checkbox></paper-checkbox>
                         </paper-item>
                     </template>
                 </paper-menu>
-            </div>
           </paper-header-panel>
           <paper-header-panel main>
             <paper-toolbar>
@@ -38,12 +33,9 @@ import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
               <div>Title</div>
             </paper-toolbar>
             <div> Main content...
-
-                <p>
-                    <div class="icons">
-                        eject
-                    </div>
-                </p>
+                <div class="icons">
+                    eject
+                </div>
             </div>
           </paper-header-panel>
         </paper-drawer-panel>
@@ -51,11 +43,20 @@ import {Component, View, bootstrap, NgFor} from 'angular2/angular2'
 })
 export class MyApp {
 
-    items:[string]
+    items:[IItem]
 
     constructor() {
-        this.items = ['foo']
-        console.log(this.items);
+        this.items = [{
+            name: 'foo'
+        }]
+    }
+
+    stuff($event:Event, item:IItem) {
+        console.log($event, item);
+    }
+
+    stuff2($event:MouseEvent) {
+        console.log($event);
     }
 
 }
