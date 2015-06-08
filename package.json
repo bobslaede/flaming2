@@ -39,16 +39,5 @@
   "bugs": {
     "url": "https://github.com/bobslaede/flaming-avenger/issues"
   },
-  "homepage": "https://github.com/bobslaede/flaming-avenger",
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "browser": {
-    "angular": "./src/bower_components/angular/angular.js"
-  },
-  "browserify-shim": {
-    "angular": "angular"
-  }
+  "homepage": "https://github.com/bobslaede/flaming-avenger"
 }

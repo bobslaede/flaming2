@@ -55,6 +55,7 @@ export class MyApp {
 
     constructor() {
         this.items = ['foo']
+        console.log(this.items);
     }
 
 }
