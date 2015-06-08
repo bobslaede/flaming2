@@ -11,6 +11,7 @@ var browserify = require('browserify');
 var tsify = require('tsify');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
+var gutil= require('gulp-util');
 
 var polymer = require('./lib/bower-polymer');
 
@@ -42,13 +43,14 @@ gulp.task('build:html', function() {
 
 });
 
-gulp.task('build:elements', ['polymer'], function () {
+gulp.task('build:elements', function () {
     return gulp.src('src/elements/elements.html')
         .pipe(vulcanize({
             inlineScripts: true,
             inlineCss: true,
-            stripComments: true
+            stripComments: false
         }))
+        .on('error', gutil.log.bind(gutil, 'Error'))
         .pipe(gulp.dest('dist/elements'))
 });
 
