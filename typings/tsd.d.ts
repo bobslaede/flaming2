@@ -24,3 +24,5 @@
 /// <reference path="rx/rx.virtualtime.d.ts" />
 /// <reference path="selenium-webdriver/selenium-webdriver.d.ts" />
 /// <reference path="zone/zone.d.ts" />
+/// <reference path="rx/rx-lite.d.ts" />
+/// <reference path="rx/rx.d.ts" />

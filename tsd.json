@@ -1,15 +1,15 @@
 {
   "version": "v4",
-  "repo": "angular/DefinitelyTyped",
+  "repo": "borisyankov/DefinitelyTyped",
   "ref": "master",
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "angular2/angular2.d.ts": {
-      "commit": "612ac88c26d767ca586908da31a4675867d8ee16"
+      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
     },
     "es6-promise/es6-promise.d.ts": {
-      "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
+      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
     },
     "hammerjs/hammerjs.d.ts": {
       "commit": "22c44d95912a07f81c103a694330b15b92f7cb40"
@@ -24,10 +24,10 @@
       "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
     },
     "rx/rx.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
+      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
     },
     "rx/rx-lite.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
+      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
     },
     "rx/rx.aggregates.d.ts": {
       "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
