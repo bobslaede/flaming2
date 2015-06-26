@@ -11,7 +11,7 @@
 </head>
 <body class="fullbleed layout vertical">
 
-
+<my-app></my-app>
 
 <!-- build:remove -->
 <script src="bower_components/systemjs/dist/system.src.js"></script>
@@ -36,6 +36,9 @@
                     return res;
                 });
     };
+
+    System.paths['angular'] = 'lib/angular-shim.js';
+    System.paths['angular-no-shim'] = '../node_modules/angular/angular.js';
 
     System.paths['./*'] = './*.ts'
     System.paths['typescript'] = 'lib/typescript.js';

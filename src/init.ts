@@ -1,5 +1,6 @@
 /// <reference path="../typings/tsd.d.ts" />
 
+import * as angular from 'angular';
 import {MyApp} from 'app/app';
 
-let app = new MyApp();
+angular.bootstrap(document.documentElement, [MyApp.name])
