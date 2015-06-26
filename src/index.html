@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- build:js components.js -->
-    <script src="bower_components/traceur-runtime/traceur-runtime.js"></script>
-    <script src="../node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <!-- endbuild -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- build:css styles/main.css -->
     <link rel="stylesheet/less" href="styles/main.less">
     <!-- endbuild -->
-    <link rel="import" href="elements/elements.html">
     <!-- build:remove -->
     <script src="bower_components/less/dist/less.js"></script>
     <!-- endbuild -->
 </head>
 <body class="fullbleed layout vertical">
 
-
-<my-app></my-app>
 
 
 <!-- build:remove -->
@@ -46,28 +37,11 @@
                 });
     };
 
-    System.paths['angular2/*'] = '../node_modules/angular2/*.js';
     System.paths['./*'] = './*.ts'
     System.paths['typescript'] = 'lib/typescript.js';
     System.paths['src/init'] = 'init.ts';
     System.paths['app/*'] = 'app/*.ts';
-    System.paths['angular'] = 'lib/angular-shim.js';
-    System.paths['angular-no-shim'] = '../node_modules/angular/angular.js';
-    System.paths['rx'] = '../node_modules/angular2/node_modules/rx/dist/rx.js';
-    System.paths['zone'] = '../node_modules/angular2/node_modules/zone.js/dist/zone.js';
 
-    System.meta['angular'] = {
-        deps: ['angular-no-shim']
-    }
-    System.meta['rx'] = {
-        format: 'cjs'
-    }
-    System.meta['zone'] = {
-        format: 'cjs'
-    }
-    System.meta['angular2'] = {
-        deps: ['rx', 'zone']
-    }
     System.import('src/init')
             .catch(console.error.bind(console));
 </script>

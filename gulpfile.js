@@ -13,12 +13,6 @@ var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
 var gutil= require('gulp-util');
 
-var polymer = require('./lib/bower-polymer');
-
-gulp.task('polymer', function (done) {
-    polymer(done);
-});
-
 gulp.task('build:clean', function () {
     return gulp.src('dist')
         .pipe(clean());
@@ -41,17 +35,6 @@ gulp.task('build:html', function() {
         }))
         .pipe(gulp.dest('dist'))
 
-});
-
-gulp.task('build:elements', function () {
-    return gulp.src('src/elements/elements.html')
-        .pipe(vulcanize({
-            inlineScripts: true,
-            inlineCss: true,
-            stripComments: false
-        }))
-        .on('error', gutil.log.bind(gutil, 'Error'))
-        .pipe(gulp.dest('dist/elements'))
 });
 
 gulp.task('build:css', function () {
@@ -79,5 +62,5 @@ gulp.task('build:js', function () {
 })
 
 gulp.task('build', function (done) {
-    runSequence('build:clean', ['build:elements', 'build:css', 'build:js'], 'build:html', done);
+    runSequence('build:clean', ['build:css', 'build:js'], 'build:html', done);
 })
