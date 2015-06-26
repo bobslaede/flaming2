@@ -6,7 +6,6 @@
 $ npm install -g gulp bower
 $ npm install -d
 $ bower install
-$ gulp polymer
 ```
 
 ## run dev
