@@ -38,6 +38,7 @@
     "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#^1.0.0",
     "iron-icons": "PolymerElements/iron-icons#^1.0.0",
     "iron-iconset": "PolymerElements/iron-iconset#^1.0.0",
-    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.0.0"
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.0.0",
+    "ng-polymer-elements": "~0.2.0"
   }
 }

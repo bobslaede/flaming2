@@ -44,5 +44,14 @@
   "bugs": {
     "url": "https://github.com/bobslaede/flaming-avenger/issues"
   },
+  "browser": {
+    "ng-polymer-elements": "./src/lib/ng-polymer-elements.js",
+    "ng-polymer-elements-no-shim": "./src/bower_components/ng-polymer-elements/ng-polymer-elements.js"
+  },
+  "browserify-shim": {
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
   "homepage": "https://github.com/bobslaede/flaming-avenger"
 }

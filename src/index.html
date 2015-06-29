@@ -5,6 +5,7 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet/less" href="styles/main.less">
     <!-- endbuild -->
+    <link rel="import" href="elements/elements.html">
     <!-- build:remove -->
     <script src="bower_components/less/dist/less.js"></script>
     <!-- endbuild -->
@@ -40,7 +41,10 @@
     System.paths['angular'] = 'lib/angular-shim.js';
     System.paths['angular-no-shim'] = '../node_modules/angular/angular.js';
 
-    System.paths['./*'] = './*.ts'
+    System.paths['ng-polymer-elements'] = 'lib/ng-polymer-elements.js';
+    System.paths['ng-polymer-elements-no-shim'] = 'bower_components/ng-polymer-elements/ng-polymer-elements.js';
+
+    System.paths['./*'] = './*.ts';
     System.paths['typescript'] = 'lib/typescript.js';
     System.paths['src/init'] = 'init.ts';
     System.paths['app/*'] = 'app/*.ts';
