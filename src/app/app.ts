@@ -1,25 +1,7 @@
 /// <reference path="../../typings.d.ts" />
 import * as angular from 'angular';
 
-interface IButton {
-    text:string
-}
-
-interface IAppModel {
-    button:IButton
-}
-
-export class MyAppController {
-    model:IAppModel;
-
-    constructor() {
-        this.model = {
-            button: {
-                text: 'bar button'
-            }
-        }
-    }
-}
+import {AppController} from './AppController';
 
 export let MyApp = angular.module('MyApp', [])
     .directive('myApp', () => {
@@ -36,6 +18,6 @@ export let MyApp = angular.module('MyApp', [])
                 </div>
             `,
             controllerAs: 'app',
-            controller: MyAppController
+            controller: AppController
         }
     })
