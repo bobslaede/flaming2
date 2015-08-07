@@ -11,9 +11,9 @@ export let MyApp = angular.module('MyApp', [])
                 <div>
                     <h1>My App</h1>
                     <hr/>
-                    <paper-button raised>
+                    <button>
                         {{app.model.button.text}}
-                    </paper-button>
+                    </button>
                     <hr/>
                 </div>
             `,
