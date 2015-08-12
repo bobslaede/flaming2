@@ -11,7 +11,8 @@ var tsify = require('tsify');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
 var gutil = require('gulp-util');
-
+var minifyCss = require('gulp-minify-css');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('build:clean', function () {
     return gulp.src('dist')
@@ -40,7 +41,13 @@ gulp.task('build:html', function() {
 gulp.task('build:css', function () {
 
     return gulp.src('src/**/*.less')
-        .pipe(less())
+        .pipe(less({
+
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(minifyCss())
         .pipe(gulp.dest('dist'))
 
 });
