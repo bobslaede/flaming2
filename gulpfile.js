@@ -1,3 +1,4 @@
+/// <binding AfterBuild='build' Clean='build:clean' />
 var gulp = require('gulp');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
@@ -70,5 +71,5 @@ gulp.task('build:js', function () {
 })
 
 gulp.task('build', function (done) {
-    runSequence('build:clean', ['build:css', 'build:js'], 'build:html', done);
+    runSequence('build:clean', 'build:js', 'build:html', 'build:css', done);
 })
