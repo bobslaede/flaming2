@@ -9,13 +9,12 @@ export class MyApp {
     controller = AppCtrl
     controllerAs = 'app'
     template = `
-                <div>
-                    <h1>My App</h1>
-                    <hr/>
-                    <button>
-                        {{app.button}}
-                    </button>
-                    <hr/>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>{{app.title}}</h1>
+                        </div>
+                    </div>
                 </div>
             `
 }
