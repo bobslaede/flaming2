@@ -5,7 +5,7 @@
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link rel="stylesheet/less" href="styles/main.less">
-    <script src="bower_components/less/dist/less.js"></script>
+    <script src="../node_modules/less/dist/less.js"></script>
     <!-- endbuild -->
 </head>
 <body class="fullbleed layout vertical">
@@ -15,8 +15,8 @@
 
 
 <!-- build:remove -->
-<script src="bower_components/systemjs/dist/system.src.js"></script>
-<script src="lib/typescript.js"></script>
+<script src="../node_modules/systemjs/dist/system.src.js"></script>
+<script src="../node_modules/typescript/bin/typescript.js"></script>
 <!--<script src="bower_components/es6-module-loader/dist/es6-module-loader-dev.src.js"></script>-->
 <script>
     var defaultExtension = '.ts';
@@ -33,8 +33,6 @@
         },
         defaultExtension: false,
         paths: {
-            'rx': '../node_modules/angular2/node_modules/rx/dist/rx.js',
-            'zone': '../node_modules/angular2/node_modules/zone.js/dist/zone.js',
             'angular': 'lib/angular-shim.js',
             'angular-no-shim': '../node_modules/angular/angular.js'
         },
