@@ -5,12 +5,15 @@ import {controller, inject} from 'ng-annotations';
 @controller()
 @inject('$http')
 export class AppCtrl {
-    button:string
+    button:string = '';
 
     constructor($http:ng.IHttpService) {
         this.button = 'foo bar';
 
-        $http.get('../tsd.json')
-            .then(foo => console.log(foo));
+        $http.get('../package.json')
+            .then(res => res.data)
+            .then(data => {
+                this.button = `${data.name} - version: ${data.version}`
+            });
     }
 }
