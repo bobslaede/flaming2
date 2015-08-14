@@ -2,6 +2,11 @@
 
 import {controller, inject} from 'ng-annotations';
 
+interface packageJson {
+    name:string
+    version:string
+}
+
 @controller()
 @inject('$http')
 export class AppCtrl {
@@ -11,7 +16,7 @@ export class AppCtrl {
 
         $http.get('../package.json')
             .then(res => res.data)
-            .then(data => {
+            .then((data:packageJson) => {
                 this.title = `${data.name} - version: ${data.version}`
             });
     }

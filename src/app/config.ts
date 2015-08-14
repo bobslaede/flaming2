@@ -5,11 +5,9 @@ import {authentication} from './authentication/authentication';
 
 @config()
 @inject('$httpProvider')
-export class config {
+export class Config {
     constructor(private $httpProvider:ng.IHttpProvider) {
-        console.log('conf');
-
-        $httpProvider.interceptors.push(this.authenticationInterceptor())
+        this.$httpProvider.interceptors.push(this.authenticationInterceptor())
     }
 
     authenticationInterceptor() {
