@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "angular": "^1.4.3"
+    "angular": "^1.4.3",
+    "ng-annotations": "^0.1.9"
   },
   "devDependencies": {
     "browserify": "^10.2.6",
@@ -43,8 +44,7 @@
   "bugs": {
     "url": "https://github.com/bobslaede/flaming-avenger/issues"
   },
-  "browser": {
-  },
+  "browser": {},
   "browserify-shim": {},
   "browserify": {
     "transform": [

@@ -1,11 +1,31 @@
 /// <reference path="./typings/tsd.d.ts" />
 
 
-// import for ngPolymerElements;
-interface ngPolymerElements {
-    name:string;
+declare module ngAnnotations {
+    interface ngAnnotations {
+        animation()
+        attach()
+        autobind()
+        config()
+        constant()
+        controller(name?:string)
+        directive(name:string)
+        factory()
+        filter()
+        inject(...injectables:any[])
+        provider()
+        run()
+        service()
+        value()
+    }
+
+    interface component {
+        autodeclare(app:ng.IModule):void
+    }
 }
-declare var ngPolymerElements:ngPolymerElements;
-declare module 'ng-polymer-elements' {
-    export = ngPolymerElements
+
+declare var ngAnnotations:ngAnnotations.ngAnnotations;
+
+declare module 'ng-annotations' {
+    export = ngAnnotations
 }

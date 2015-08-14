@@ -33,8 +33,16 @@
         },
         defaultExtension: false,
         paths: {
-            'angular': 'lib/angular-shim.js',
-            'angular-no-shim': '../node_modules/angular/angular.js'
+            'angular': 'shims/angular.js',
+            'angular-no-shim': '../node_modules/angular/angular.js',
+            'ng-annotations': 'shims/ng-annotations.js',
+            'ng-annotations-no-shim': '../node_modules/ng-annotations/dist/ng-annotations.js'
+        },
+        meta: {
+            'ng-annotations' : {
+                format: 'global',
+                exports: 'ngAnnotations'
+            }
         }
     };
 

@@ -1,6 +1,10 @@
 /// <reference path="../typings.d.ts" />
 
 import * as angular from 'angular';
-import {MyApp} from 'app/app';
+import {components} from './components';
 
-angular.bootstrap(document.documentElement, [MyApp.name])
+let app = angular.module('app', []);
+
+components.forEach((component:any) => <any>component.autodeclare(app));
+
+angular.bootstrap(document.documentElement, [app.name])
