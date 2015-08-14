@@ -11,7 +11,12 @@ export class car {
     controllerAs = 'car'
     template = `<div class="car">
         <ng-form>
-            CAR
+            <button class="btn btn-primary" ng-click="car.addCar()" type="button">add</button>
+            <ul>
+                <li ng-repeat="c in car.cars">
+                    {{c.foo}}
+                </li>
+            </ul>
         </ng-form>
     </div>`
 }

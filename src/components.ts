@@ -16,4 +16,3 @@ export let components = [
     Store
 ]
 
-console.log(components);
