@@ -1,7 +1,7 @@
 /// <reference path="../../typings.d.ts" />
 
 import {config, inject} from 'ng-annotations';
-import {authentication} from './authentication/authentication';
+import {Authentication} from './authentication/authentication';
 
 @config()
 @inject('$httpProvider')
@@ -11,7 +11,7 @@ export class Config {
     }
 
     authenticationInterceptor() {
-        return function(authentication:authentication) {
+        return function(authentication:Authentication) {
             return {
                 request: (config) => {
                     return authentication.getToken()

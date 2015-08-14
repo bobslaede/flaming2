@@ -3,20 +3,20 @@
 
 declare module ngAnnotations {
     interface ngAnnotations {
-        animation()
-        attach()
+        animation(cssSelector:string)
+        attach(source:string, path?:string)
         autobind()
         config()
-        constant()
+        constant(name:string, value:any)
         controller(name?:string)
-        directive(name:string)
-        factory()
-        filter()
+        directive(name?:string)
+        factory(name?:string)
+        filter(name?:string)
         inject(...injectables:any[])
-        provider()
+        provider(name?:string)
         run()
-        service()
-        value()
+        service(name?:string)
+        value(name:string, value:any)
     }
 
     interface component {

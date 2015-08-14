@@ -2,9 +2,9 @@
 
 import {service, inject} from 'ng-annotations';
 
-@service()
+@service('authentication')
 @inject('$window', '$q')
-export class authentication {
+export class Authentication {
 
     constructor(private $window:ng.IWindowService, private $q:ng.IQService) {
 
@@ -17,3 +17,4 @@ export class authentication {
     }
 
 }
+
