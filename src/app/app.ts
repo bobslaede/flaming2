@@ -8,8 +8,7 @@ export class myApp {
     restrict = 'E'
     controller = AppCtrl
     controllerAs = 'app'
-    template = `
-                <div class="container">
+    template = `<div class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <h1>{{app.title}}</h1>

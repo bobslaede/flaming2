@@ -13,6 +13,7 @@ var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
 var minifyCss = require('gulp-minify-css');
 var autoprefixer = require('gulp-autoprefixer');
+var ngAnnotate = require('gulp-ng-annotate')
 
 gulp.task('build:clean', function () {
     return gulp.src('dist')
@@ -63,7 +64,9 @@ gulp.task('build:js', function () {
         .bundle()
         .pipe(source('init.js'))
         .pipe(buffer())
-        .pipe(uglify())
+        .pipe(uglify({
+            mangle: false
+        }))
         .pipe(gulp.dest('dist'))
 
 })

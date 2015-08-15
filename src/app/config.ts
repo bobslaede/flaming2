@@ -11,7 +11,7 @@ export class Config {
     }
 
     authenticationInterceptor() {
-        return function(authentication:Authentication) {
+        return ['authentication', function(authentication:Authentication) {
             return {
                 request: (config) => {
                     return authentication.getToken()
@@ -21,7 +21,7 @@ export class Config {
                             });
                 }
             }
-        }
+        }]
     }
 
 }
