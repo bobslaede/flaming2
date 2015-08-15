@@ -6,7 +6,7 @@ import {Store, StoreEvents} from '../store/store';
 export var CarEvents = StoreEvents;
 
 @service('carStore')
-export class CarStore extends Store{
+export class CarStore extends Store {
 
     constructor() {
         super();

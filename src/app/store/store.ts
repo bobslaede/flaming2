@@ -19,9 +19,9 @@ export class Store {
 
     }
 
-    dispatch(event:StoreEvents) {
+    dispatch(event:StoreEvents, ...args?:any[]) {
         (this.listeners[event] || [])
-            .forEach(cb => cb());
+            .forEach(cb => cb(...args));
     }
 
     on(event:StoreEvents, callback:Function) {

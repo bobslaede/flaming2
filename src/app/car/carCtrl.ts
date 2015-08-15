@@ -18,9 +18,8 @@ export class CarCtrl {
         carStore.set([{foo:'bar'}])
     }
 
-    addCar() {
-        let r = Math.random().toString();
-        this.carStore.add({foo: r})
+    addCar(car) {
+        this.carStore.add(car)
     }
 
 }
