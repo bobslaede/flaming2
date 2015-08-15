@@ -18,7 +18,7 @@ export class Store {
 
     idField = 'id'
 
-    private model = {
+    model:any = {
 
     }
 
@@ -39,7 +39,7 @@ export class Store {
         })
     }
 
-    dispatch(event:StoreEvents, ...args?:any[]) {
+    dispatch(event:StoreEvents, ...args:any[]) {
         (this.listeners[event] || [])
             .forEach(cb => cb(...args));
     }
