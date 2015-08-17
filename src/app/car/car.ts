@@ -12,7 +12,7 @@ export class carList {
     template =
         `<div class="car">
             <ul class="list-unstyled">
-                <li ng-repeat="c in carCtrl.cars">
+                <li ng-repeat="c in carCtrl.cars track by c.id">
                     <a ui-sref="edit({id: c.id})">{{c.brand}} {{c.model}}</a>
                 </li>
             </ul>

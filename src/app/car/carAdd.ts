@@ -13,15 +13,18 @@ export class carAdd {
         `<div class="car">
             <form class="form" novalidate name="carform">
                 <div class="form-group">
-                    <input type="text" name="newCar.brand" ng-model="newCar.brand" class="form-control"
+                    <input type="text" name="carCtrl.car.brand" ng-model="carCtrl.car.brand" class="form-control"
                         required placeholder="brand" />
                 </div>
                 <div class="form-group">
-                    <input type="text" name="newCar.model" ng-model="newCar.model" class="form-control"
+                    <input type="text" name="carCtrl.car.model" ng-model="carCtrl.car.model" class="form-control"
                         required placeholder="model" />
                 </div>
-                <button class="btn btn-primary" ng-click="carform.$valid && carCtrl.addCar(newCar)" type="button"
+                <button class="btn btn-primary" ng-click="carform.$valid && carCtrl.addCar(carCtrl.car)" type="button"
                     ng-disabled="!carform.$valid">{{carCtrl.buttonLabel}}</button>
+                <button class="btn btn-primary" ng-click="carCtrl.delCar(carCtrl.car)" type="button"
+                    ng-if="carCtrl.car.id">delete</button>
+
             </form>
         </div>`
 }

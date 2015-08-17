@@ -3,19 +3,15 @@
 import {controller, inject} from 'ng-annotations';
 import {CarStore, CarEvents, CarModel} from './carStore';
 
-interface CarCtrlScope extends ng.IScope {
-    newCar:CarModel
-}
-
 @controller()
-@inject(CarStore, '$scope', '$state', '$stateParams')
+@inject(CarStore, '$state', '$stateParams')
 export class CarCtrl {
 
-    cars:any[] = []
-    buttonLabel:string = 'add';
+    cars:CarModel[] = []
+    car:CarModel
+    buttonLabel:string = 'add'
 
     constructor(private carStore:CarStore,
-                private $scope:CarCtrlScope,
                 private $state:angular.ui.IStateService,
                 private $stateParams:angular.ui.IStateParamsService) {
 
@@ -23,10 +19,10 @@ export class CarCtrl {
 
         if ($stateParams['id']) {
             let id = $stateParams['id'];
-            let car = this.cars.filter(i => i.id == id).pop();
+            let car = this.carStore.getById(id);
             if (car) {
                 this.buttonLabel = 'save';
-                this.$scope.newCar = angular.copy(car);
+                this.car = car;
             } else {
                 $state.go('list');
             }
@@ -36,15 +32,25 @@ export class CarCtrl {
             this.cars = carStore.get();
         })
 
+        carStore.on(CarEvents.remove, () => {
+            $state.go('list')
+        })
+
         carStore.on(CarEvents.add, (item) => {
             $state.go('edit', {id: item.id})
         })
     }
 
+    delCar(car) {
+        if (car.id) {
+            this.carStore.remove(car);
+        }
+    }
+
     addCar(car) {
         if (!car.id) {
             this.carStore.add(car)
-            this.$scope.newCar = this.carStore.create();
+            this.car = this.carStore.create();
         } else {
             this.carStore.update(car);
         }

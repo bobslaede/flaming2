@@ -3,12 +3,10 @@
 import {service, inject} from 'ng-annotations';
 import * as angular from 'angular';
 
-let stores = {}
-
-
 export enum StoreEvents {
     set,
-    add
+    add,
+    remove
 }
 
 @service('store')
@@ -57,6 +55,11 @@ export class Store {
         this.listeners[event].push(callback);
     }
 
+    remove(item:any) {
+        this.set(this.get().filter(i => i[this.idField] !== item[this.idField]))
+        this.dispatch(StoreEvents.remove);
+    }
+
     update(item:any) {
         if (!item[this.idField]) {
             throw `No ID field ${this.idField} on model`;
@@ -83,6 +86,10 @@ export class Store {
 
     get() {
         return this.data.slice()
+    }
+
+    getById(id:string) {
+        return angular.copy(this.get().filter(item => item[this.idField] == id).pop());
     }
 
     set(data:any) {
