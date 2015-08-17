@@ -1,6 +1,6 @@
 /// <reference path="../../../typings.d.ts" />
 
-import {service} from 'ng-annotations';
+import {service, inject} from 'ng-annotations';
 import {Store, StoreEvents} from '../store/store';
 
 export var CarEvents = StoreEvents;

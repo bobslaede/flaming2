@@ -16,9 +16,15 @@ export class myApp {
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <car></car>
+                            <nav>
+                                <ul>
+                                    <li><a ui-sref="list">List</a></li>
+                                    <li><a ui-sref="add">Add</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
+                    <ui-view></ui-view>
                 </div>
             `
 }

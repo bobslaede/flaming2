@@ -2,8 +2,9 @@
 
 import * as angular from 'angular';
 import {components} from './components';
+import 'angular-ui-router';
 
-let app = angular.module('app', []);
+let app = angular.module('app', ['ui.router']);
 
 components.forEach((component:any) => <any>component.autodeclare(app));
 

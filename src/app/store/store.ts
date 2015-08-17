@@ -7,7 +7,8 @@ let stores = {}
 
 
 export enum StoreEvents {
-    set
+    set,
+    add
 }
 
 @service('store')
@@ -15,6 +16,7 @@ export class Store {
 
     private data = []
     private listeners = {}
+    private storageKey:string;
 
     idField = 'id'
 
@@ -23,7 +25,13 @@ export class Store {
     }
 
     constructor() {
+        this.storageKey = `store-${(<any>this.constructor).name}`;
 
+        let json = window.localStorage.getItem(this.storageKey);
+        try {
+            let data = JSON.parse(json);
+            this.set(data);
+        } catch (e) {}
     }
 
     guid():string {
@@ -70,6 +78,7 @@ export class Store {
         }
         data.push(model);
         this.set(data);
+        this.dispatch(StoreEvents.add, model);
     }
 
     get() {
@@ -79,6 +88,8 @@ export class Store {
     set(data:any) {
         this.data = data.slice()
         this.dispatch(StoreEvents.set)
+        let json = JSON.stringify(this.data);
+        window.localStorage.setItem(this.storageKey, json);
     }
 
 }

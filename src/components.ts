@@ -3,7 +3,8 @@
 import {myApp} from './app/app';
 import {Config} from './app/config';
 import {Authentication} from './app/authentication/authentication';
-import {car} from './app/car/car';
+import {carList} from './app/car/car';
+import {carAdd} from './app/car/carAdd';
 import {CarStore} from './app/car/carStore';
 import {Store} from './app/store/store'
 
@@ -11,7 +12,8 @@ export let components = [
     myApp,
     Config,
     Authentication,
-    car,
+    carList,
+    carAdd,
     CarStore,
     Store
 ]

@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "angular": "^1.4.3",
+    "angular-ui-router": "^0.2.15",
     "ng-annotations": "^0.1.9",
     "reflect-metadata": "^0.1.0"
   },
