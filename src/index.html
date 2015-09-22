@@ -16,8 +16,6 @@
 
 <!-- build:remove -->
 <script src="../node_modules/systemjs/dist/system.src.js"></script>
-<script src="../node_modules/typescript/lib/typescript.js"></script>
-<!--<script src="bower_components/es6-module-loader/dist/es6-module-loader-dev.src.js"></script>-->
 <script>
     var defaultExtension = '.ts';
 
@@ -33,6 +31,7 @@
         },
         defaultExtension: false,
         paths: {
+            'typescript': '../node_modules/typescript/lib/typescript.js',
             'angular': 'shims/angular.js',
             'angular-no-shim': '../node_modules/angular/angular.js',
             'angular-ui-router': '../node_modules/angular-ui-router/release/angular-ui-router.js',
