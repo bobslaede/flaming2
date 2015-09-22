@@ -7,8 +7,8 @@
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "files": []
 }
