@@ -5,89 +5,23 @@
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
   "installed": {
-    "angular2/angular2.d.ts": {
-      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
-    },
     "es6-promise/es6-promise.d.ts": {
-      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
-    },
-    "hammerjs/hammerjs.d.ts": {
-      "commit": "22c44d95912a07f81c103a694330b15b92f7cb40"
-    },
-    "jasmine/jasmine.d.ts": {
-      "commit": "055b3172e8eb374a75826710c4d08677872620d3"
+      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
     },
     "node/node.d.ts": {
-      "commit": "d5f92f93bdb49f332fa662ff1d0cc8700f02e4dc"
-    },
-    "rx/rx.all.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.d.ts": {
-      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
-    },
-    "rx/rx-lite.d.ts": {
-      "commit": "448c3509f1ae76930ebd2d79df23e288172f5a0a"
-    },
-    "rx/rx.aggregates.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.time.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.time-lite.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.async.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.async-lite.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.binding.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.binding-lite.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.coincidence.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.coincidence-lite.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.experimental.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.joinpatterns.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.virtualtime.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.testing.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.backpressure.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "rx/rx.backpressure-lite.d.ts": {
-      "commit": "3882d337bb0808cde9fe4c08012508a48c135482"
-    },
-    "selenium-webdriver/selenium-webdriver.d.ts": {
-      "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
-    },
-    "zone/zone.d.ts": {
-      "commit": "055b3172e8eb374a75826710c4d08677872620d3"
-    },
-    "angular-protractor/angular-protractor.d.ts": {
-      "commit": "4207593c012565a7ea800ed861ffbe5011e7a501"
+      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
     },
     "angularjs/angular.d.ts": {
-      "commit": "284c2b8828f06bdde1f949a22ad174f5221d57f9"
+      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
     },
     "jquery/jquery.d.ts": {
-      "commit": "284c2b8828f06bdde1f949a22ad174f5221d57f9"
+      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
+    },
+    "touch-events/touch-events.d.ts": {
+      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
     }
   }
 }

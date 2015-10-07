@@ -1,5 +1,5 @@
+/// <binding AfterBuild='build' Clean='build:clean' />
 var gulp = require('gulp');
-var vulcanize = require('gulp-vulcanize');
 var useref = require('gulp-useref');
 var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
@@ -11,13 +11,9 @@ var browserify = require('browserify');
 var tsify = require('tsify');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
-var gutil = require('gulp-util');
-
-var polymer = require('./lib/bower-polymer');
-
-gulp.task('polymer', function (done) {
-    polymer(done);
-});
+var minifyCss = require('gulp-minify-css');
+var autoprefixer = require('gulp-autoprefixer');
+var ngAnnotate = require('gulp-ng-annotate')
 
 gulp.task('build:clean', function () {
     return gulp.src('dist')
@@ -43,22 +39,16 @@ gulp.task('build:html', function() {
 
 });
 
-gulp.task('build:elements', function () {
-    return gulp.src('src/elements/elements.html')
-        .pipe(vulcanize({
-            inlineScripts: true,
-            inlineCss: true,
-            stripComments: false
-        }))
-        .on('error', gutil.log.bind(gutil, 'Error'))
-        .pipe(gulp.dest('dist/elements'))
-});
-
 gulp.task('build:css', function () {
 
-    return gulp.src('src/**/*.less')
-        .pipe(less())
-        .pipe(gulp.dest('dist'))
+    return gulp.src('src/styles/*.less')
+        .pipe(less({
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(minifyCss())
+        .pipe(gulp.dest('dist/styles'))
 
 });
 
@@ -74,10 +64,13 @@ gulp.task('build:js', function () {
         .bundle()
         .pipe(source('init.js'))
         .pipe(buffer())
+        .pipe(uglify({
+            mangle: false
+        }))
         .pipe(gulp.dest('dist'))
 
 })
 
 gulp.task('build', function (done) {
-    runSequence('build:clean', ['build:elements', 'build:css', 'build:js'], 'build:html', done);
+    runSequence('build:clean', 'build:js', 'build:html', 'build:css', done);
 })

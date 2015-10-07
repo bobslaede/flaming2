@@ -2,29 +2,20 @@
 <html>
 <head>
     <!-- build:js components.js -->
-    <script src="bower_components/traceur-runtime/traceur-runtime.js"></script>
-    <script src="../node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <!-- endbuild -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- build:css styles/main.css -->
     <link rel="stylesheet/less" href="styles/main.less">
-    <!-- endbuild -->
-    <link rel="import" href="elements/elements.html">
-    <!-- build:remove -->
-    <script src="bower_components/less/dist/less.js"></script>
+    <script src="../node_modules/less/dist/less.js"></script>
     <!-- endbuild -->
 </head>
-<body class="fullbleed layout vertical">
+<body>
 
 
 <my-app></my-app>
 
 
 <!-- build:remove -->
-<script src="bower_components/systemjs/dist/system.src.js"></script>
-<script src="lib/typescript.js"></script>
-<!--<script src="bower_components/es6-module-loader/dist/es6-module-loader-dev.src.js"></script>-->
+<script src="../node_modules/systemjs/dist/system.src.js"></script>
 <script>
     var defaultExtension = '.ts';
 
@@ -40,23 +31,12 @@
         },
         defaultExtension: false,
         paths: {
-            'rx': '../node_modules/angular2/node_modules/rx/dist/rx.js',
-            'zone': '../node_modules/angular2/node_modules/zone.js/dist/zone.js',
-            'angular': 'lib/angular-shim.js',
+            'typescript': '../node_modules/typescript/lib/typescript.js',
+            'angular': 'shims/angular.js',
             'angular-no-shim': '../node_modules/angular/angular.js',
-            'ng-polymer-elements': 'lib/ng-polymer-elements.js',
-            'ng-polymer-elements-no-shim': 'bower_components/ng-polymer-elements/ng-polymer-elements.js'
-        },
-        meta: {
-            'rx': {
-                'format' : 'cjs'
-            },
-            'zone': {
-                'format' : 'cjs'
-            },
-            'angular2': {
-                deps: ['rx','zone']
-            }
+            'angular-ui-router': '../node_modules/angular-ui-router/release/angular-ui-router.js',
+            'ng-annotations': 'shims/ng-annotations.js',
+            'ng-annotations-no-shim': '../node_modules/ng-annotations/dist/ng-annotations.js'
         }
     };
 
