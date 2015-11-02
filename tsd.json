@@ -12,10 +12,10 @@
       "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
     },
     "angularjs/angular.d.ts": {
-      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     },
     "jquery/jquery.d.ts": {
-      "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     },
     "angular-ui-router/angular-ui-router.d.ts": {
       "commit": "09e37435ffb2c56a6f908081194a74756f24f99d"
@@ -25,6 +25,9 @@
     },
     "jasmine/jasmine.d.ts": {
       "commit": "e9be3cecf8a326d3e220c52b42d218169a7bb9f2"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "66f88ec51858bb21bc375fa91a963c04bc09401e"
     }
   }
 }
