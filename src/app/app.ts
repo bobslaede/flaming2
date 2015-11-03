@@ -18,8 +18,7 @@ export class myApp {
                         <div class="col-md-12">
                             <nav>
                                 <ul>
-                                    <li><a ui-sref="list">List</a></li>
-                                    <li><a ui-sref="add">Add</a></li>
+                                    <li><a ui-sref="home">Home</a></li>
                                 </ul>
                             </nav>
                         </div>
