@@ -9,7 +9,7 @@ export enum StoreEvents {
     remove
 }
 
-@service('store')
+@service()
 export class Store {
 
     private data = []

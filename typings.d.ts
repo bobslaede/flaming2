@@ -1,7 +1,11 @@
 /// <reference path="./typings/tsd.d.ts" />
 
 
+
 declare module ngAnnotations {
+
+    type ComponentDecorator = <TFunction extends Function>(target: TFunction) => TFunction
+
     interface ngAnnotations {
         animation(cssSelector:string)
         attach(source:string, path?:string)
@@ -13,16 +17,20 @@ declare module ngAnnotations {
         factory(name?:string)
         filter(name?:string)
         inject(...injectables:any[])
-        provider(name?:string)
+        provider(name?: string)
+
+        service(name?: string): ComponentDecorator
+
         run()
-        service(name?:string)
         value(name:string, value:any)
     }
 
     interface component {
         autodeclare(app:ng.IModule):void
     }
+    
 }
+
 
 declare var ngAnnotations:ngAnnotations.ngAnnotations;
 

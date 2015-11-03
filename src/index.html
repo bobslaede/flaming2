@@ -63,17 +63,17 @@
     System.normalize = function (name, parent, parentAddress) {
         var parentExt = ext(parent);
         return Promise.resolve(norm.apply(System, arguments))
-                .then(function (normed) {
-                    if (normed.indexOf(baseURI) > -1) { // relative to this subpath
-                        if (!ext(normed)) {
-                            normed = normed + (parentExt || defaultExtension);
-                        }
-                    }
+            .then(function(normed) {
+                if (normed.indexOf(baseURI) > -1) { // relative to this subpath
                     if (!ext(normed)) {
-                        normed = normed + '.js'; // systemjs loader is fuk
+                        normed = normed + (parentExt || defaultExtension);
                     }
-                    return normed;
-                })
+                }
+                if (!ext(normed)) {
+                    normed = normed + '.js'; // systemjs loader is fuk
+                }
+                return normed;
+            });
     };
 
     System.import('./init.ts')
