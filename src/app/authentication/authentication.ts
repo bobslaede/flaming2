@@ -13,7 +13,7 @@ export class Authentication {
     getToken():ng.IPromise<string> {
         return new this.$q((resolve, reject) => {
             resolve('foo-bar-baz');
-        })
+        });
     }
 
 }

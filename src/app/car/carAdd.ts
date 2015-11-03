@@ -6,9 +6,9 @@ import {CarStore} from './carStore';
 
 @directive()
 export class carAdd {
-    restrict = 'E'
-    controller = CarCtrl
-    controllerAs = 'carCtrl'
+    restrict = 'E';
+    controller = CarCtrl;
+    controllerAs = 'carCtrl';
     template =
         `<div class="car">
             <form class="form" novalidate name="carform">
@@ -22,10 +22,11 @@ export class carAdd {
                 </div>
                 <button class="btn btn-primary" ng-click="carform.$valid && carCtrl.addCar(carCtrl.car)" type="button"
                     ng-disabled="!carform.$valid">{{carCtrl.buttonLabel}}</button>
-                <button class="btn btn-primary" ng-click="carCtrl.delCar(carCtrl.car)" type="button"
+                <button class="btn btn-warning" ng-click="carCtrl.delCar(carCtrl.car)" type="button"
                     ng-if="carCtrl.car.id">delete</button>
+                <button class="btn btn-default" ng-click="carCtrl.goHome()" type="button">back</button>
 
             </form>
-        </div>`
+        </div>`;
 }
 

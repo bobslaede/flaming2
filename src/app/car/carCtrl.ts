@@ -7,9 +7,9 @@ import {CarStore, CarEvents, CarModel} from './carStore';
 @inject(CarStore, '$state', '$stateParams')
 export class CarCtrl {
 
-    cars:CarModel[] = []
-    car:CarModel
-    buttonLabel:string = 'add'
+    cars:CarModel[] = [];
+    car:CarModel;
+    buttonLabel:string = 'add';
 
     constructor(private carStore:CarStore,
                 private $state:angular.ui.IStateService,
@@ -30,15 +30,19 @@ export class CarCtrl {
 
         carStore.on(CarEvents.set, () => {
             this.cars = carStore.get();
-        })
+        });
 
         carStore.on(CarEvents.remove, () => {
             $state.go('list')
-        })
+        });
 
         carStore.on(CarEvents.add, (item) => {
-            $state.go('edit', {id: item.id})
-        })
+            $state.go('edit', { id: item.id })
+        });
+    }
+
+    goHome() {
+        this.$state.go('list');
     }
 
     delCar(car) {
@@ -49,7 +53,7 @@ export class CarCtrl {
 
     addCar(car) {
         if (!car.id) {
-            this.carStore.add(car)
+            this.carStore.add(car);
             this.car = this.carStore.create();
         } else {
             this.carStore.update(car);
