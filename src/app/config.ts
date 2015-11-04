@@ -17,7 +17,11 @@ export class Config {
         this.$stateProvider
             .state('home', {
                 url: '/home',
-                template: `<p>Home</p>`
+                template: `<home-dir></home-dir>`
+            })
+            .state('users', {
+                url: '/users/foo/bar',
+                template: `<user-list></user-list>`
             })
 
         this.$urlRouterProvider

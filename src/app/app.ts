@@ -19,6 +19,7 @@ export class myApp {
                             <nav>
                                 <ul>
                                     <li><a ui-sref="home">Home</a></li>
+                                    <li><a ui-sref="users">User list</a></li>
                                 </ul>
                             </nav>
                         </div>

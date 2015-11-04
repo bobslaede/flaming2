@@ -7,6 +7,6 @@ export class AppCtrl {
     title:string = '';
 
     constructor() {
-        this.title = 'IM AM APP'
+        this.title = `I'M AN APP`
     }
 }
