@@ -1,4 +1,4 @@
-/// <reference path="../typings.d.ts" />
+﻿/// <reference path="../typings.d.ts" />
 
 import * as angular from 'angular';
 import {components} from './components';
