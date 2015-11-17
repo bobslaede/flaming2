@@ -23,12 +23,14 @@ export class Store {
 
     idField = 'id';
 
+    private storageType:string = 'localStorage'
+
     model: StoreModel;
 
     constructor(private $window) {
         this.storageKey = `store-${(<any>this.constructor).name}`;
 
-        let json = this.$window.localStorage.getItem(this.storageKey);
+        let json = this.$window[this.storageType].getItem(this.storageKey);
         try {
             let data = JSON.parse(json);
             this.set(data);
@@ -42,7 +44,7 @@ export class Store {
         });
     }
 
-    create() {
+    create():StoreModel {
         return angular.extend({}, this.model || {}, {
             [this.idField]: this.guid()
         });
@@ -97,9 +99,9 @@ export class Store {
 
     set(data: any) {
         this.data = data.slice();
-        this.dispatch(StoreEvents.set);
         let json = JSON.stringify(this.data);
-        this.$window.localStorage.setItem(this.storageKey, json);
+        this.$window[this.storageType].setItem(this.storageKey, json);
+        this.dispatch(StoreEvents.set);
     }
 
 }

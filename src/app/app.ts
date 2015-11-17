@@ -20,11 +20,16 @@ export class myApp {
                                 <ul>
                                     <li><a ui-sref="home">Home</a></li>
                                     <li><a ui-sref="users">User list</a></li>
+                                    <li><a ui-sref="adduser">Add user</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                     <ui-view></ui-view>
+
+                    <hr/>
+
+                    <user-list></user-list>
                 </div>
             `
 }

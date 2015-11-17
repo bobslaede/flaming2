@@ -23,6 +23,14 @@ export class Config {
                 url: '/users',
                 template: `<user-list></user-list>`
             })
+            .state('userEdit', {
+                url: '/user/:id',
+                template: `<user-view></user-view>`
+            })
+            .state('adduser', {
+                url: '/adduser',
+                template: `<user-add></user-add>`
+            })
 
         this.$urlRouterProvider
             .otherwise('home')
