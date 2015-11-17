@@ -13,9 +13,9 @@ var moduleToComponentList = (module) => {
 
 export let components = [
     myApp,
-    Config,
     homeDir,
     moduleToComponentList(user),
-    Store
+    Store,
+    Config
 ]
 
