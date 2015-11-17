@@ -20,7 +20,7 @@ export class Config {
                 template: `<home-dir></home-dir>`
             })
             .state('users', {
-                url: '/users/foo/bar',
+                url: '/users',
                 template: `<user-list></user-list>`
             })
 

@@ -3,12 +3,19 @@
 import {myApp} from './app/app';
 import {Config} from './app/config';
 import {homeDir} from './app/home';
-import {userList} from './app/userList';
+import * as user from './app/user/index';
+import {Store} from './app/store/store';
+
+var moduleToComponentList = (module) => {
+    let keys = Object.keys(module);
+    return keys.map(name => module[name]);
+}
 
 export let components = [
     myApp,
     Config,
     homeDir,
-    userList
+    moduleToComponentList(user),
+    Store
 ]
 
